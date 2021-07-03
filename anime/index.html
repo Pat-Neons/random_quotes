@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quotes</title>
+    <script defer src="quoteMaker.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bilbo&display=swap");
+      body {
+        background-color: black;
+        font-family: "Bilbo", cursive;
+        margin: 0;
+        display: grid;
+        color: white;
+        height: 100vh;
+        place-items: center;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .quote-container {
+        font-size: 3em;
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      #author {
+        font-size: 2.5em;
+        text-align: right;
+        font-size: 0.5em;
+        color: #fdfdfd42;
+      }
+      #animeQuote {
+        color: white;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+      }
+    </style>
+  </head>
+  <body background="./wallpaper.jpg">
+    <div class="quote-container">
+      <div id="quote"></div>
+      <div id="author"></div>
+    </div>
+    <a id="animeQuote" href="#">Anime</a>
+  </body>
+</html>
