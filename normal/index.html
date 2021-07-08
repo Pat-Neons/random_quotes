@@ -5,44 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quotes</title>
-    <script defer src="quoteMaker.js"></script>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Bilbo&display=swap");
-      body {
-        background-color: black;
-        font-family: "Bilbo", cursive;
-        margin: 0;
-        display: grid;
-        color: white;
-        height: 100vh;
-        place-items: center;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        font-size: 3em;
-      }
-      .quote-container {
-        padding: 15px;
-        background-color: rgba(0, 0, 0, 0.8);
-      }
-      #author {
-        text-align: right;
-        font-size: 1em;
-        color: #fdfdfd42;
-      }
-      #animeQuote {
-        color: white;
-        position: absolute;
-        bottom: 0px;
-        right: 0px;
-      }
-    </style>
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://use.fontawesome.com/66c163070e.js"></script>
+    <style></style>
   </head>
+  <!-- 
+    <i class="fa fa-star" aria-hidden="true"></i>
+  -->
   <body>
+    <!-- btn to toggle the favorite quotes window -->
+    <button class="favs-list-btn">Favorites</button>
+    <!-- main quote from api -->
     <div class="quote-container">
       <div id="quote"></div>
       <div id="author"></div>
+      <div class="extra-btns">
+        <button class="copy-btn">
+          <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </button>
+        <button class="fav-btn">
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </button>
+      </div>
     </div>
-    <a id="animeQuote" href="#">Anime</a>
+    <!-- this will be hidden at first be shown when we click on button.favslist-btn  -->
+    <div class="fav-quotes-list-container">
+      <!-- <h1>hmmm.....looks like you still dont have any favorite quotes</h1> -->
+      <button class="close-btn">
+        <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+      </button>
+
+      <div class="quote-container">
+        <div id="quote">tertwertwre</div>
+        <div id="author">qwerewr</div>
+        <div class="extra-btns">
+          <button class="copy-btn">
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
+          </button>
+          <button class="fav-btn favorated">
+            <i class="fa fa-star" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <div class="quote-container">
+        <div id="quote">terwetwerwetw ettwertwre</div>
+        <div id="author">qwerewwewwr</div>
+        <div class="extra-btns">
+          <button class="copy-btn">
+            <i class="fa fa-clipboard" aria-hidden="true"></i>
+          </button>
+          <button class="fav-btn favorated">
+            <i class="fa fa-star" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
