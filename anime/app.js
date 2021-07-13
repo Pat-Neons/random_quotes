@@ -10,8 +10,8 @@ let favBtn = Array.from(document.querySelectorAll(".fav-btn"));
 //evt listeners
 window.addEventListener("load", () => {
   updateFavList();
-  loadBackground("https://source.unsplash.com/1600x900/?nature");
-  randomQuote();
+  loadBackground("./wallpaper.jpg");
+  randomAnimeQuote();
 });
 
 favListOpenBtn.addEventListener("click", favToggleList);
@@ -22,22 +22,23 @@ favBtn.forEach((btn) => btn.addEventListener("click", toggleFavQuote));
 
 //functions
 async function loadBackground(link) {
-  document.querySelector("body").style.background = `url(${link})`;
+  document.querySelector("body").style.backgroundImage = `url(${link})`;
 }
 
-async function randomQuote() {
-  const response = await fetch("https://api.quotable.io/random");
-  const data = await response.json();
-
-  quoteElem.innerText = data.content;
-  authorElem.innerText = data.author;
+function randomAnimeQuote() {
+  fetch("https://animechan.vercel.app/api/random")
+    .then((response) => response.json())
+    .then((obj) => {
+      quoteElem.innerText = obj.quote;
+      authorElem.innerText = `${obj.character} (${obj.anime})`;
+    });
 }
 
 function copyText(evt) {
   let quote = evt.target.parentElement.parentElement.children[0].innerText;
   let author = evt.target.parentElement.parentElement.children[1].innerText;
   navigator.clipboard.writeText(`${quote}~${author}`);
-  alert("copied");
+  setTimeout(() => alert("copied"), 1000);
 }
 
 function favToggleList() {
